@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="asdf.fsa.saf">
+	<logger name="com.ssmall.data">
 		<level value="info" />
 	</logger>
 	
