@@ -10,6 +10,7 @@ public class MemberVO {
 	private int sex;
 	private String addr;
 	private int state;
+	
 	public int getNo() {
 		return no;
 	}
