@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="member_mapper">
+	<select id="select_one" resultType="com.ssmall.dd.dto.MemberVO">
+		select * from memeber where id = #{id}
+	</select>
+	
+	<select id="select_minfo" resultType="com.ssmall.dd.dto.M_infoVO">
+		select * from m_info where m_no = #{no}
+	</select>
+	
+	<insert id="insert_mem" parameterType="com.ssmall.dd.dto.MemberVO">
+		insert into member value ((select max(no)+1 from member),
+		#{id}, #{pwd}, #{name}, #{nick}, #{p_num}, #{sex}, #{addr}, #{state})
+	</insert>
+	
+	<update id="update_mem">
+		update member set pwd = #{pwd}, nick = #{nick}, p_num = #{p_num}, 
+		addr = #{addr} where no = #{no}
+	</update>
+	
+	<delete id="delete_mem">
+		delete from member where no = #{no}	
+	</delete>
+
+	<insert id="cart_insert">
+		insert into cart value ((select max(no)+1 from cart), #{m_no}, #{p_item},
+		sysdate)
+	</insert>
+	
+	<update id="cart_update">
+		update cart set p_item = #{p_item}, r_date = sysdate
+	</update>
+
+	<delete id="cart_delete">
+		delete from cart where m_no = #{m_no}
+	</delete>
+	
+	<select id="sysdate" resultType="Date">
+		select sysdate from dual
+	</select> 
+	
+	<select id="select_dev" resultType="com.ssmall.dd.dto.DevVO">
+		select * from dev where m_no = #{m_no}
+	</select> 
+	
+	
+</mapper>

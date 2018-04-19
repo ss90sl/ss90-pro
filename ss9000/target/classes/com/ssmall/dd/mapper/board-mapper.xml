@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board_mapper">
+	<select id="select_one">
+		select * from board where i_no = #{i_no}
+	</select>
+	
+	<select id="select_two" resultType="com.ssmall.dd.dto.BoardVO">
+		select * from board where c_no = #{c_no} and m_no = #{m_no} 
+	</select>
+	
+	<select id="select_thr" resultType="com.ssmall.dd.dto.BoardVO">
+		select * from board where c_no = #{c_no} and m_no = #{m_no} and b_no = #{b_no} 
+	</select>
+	
+	<insert id="insert_board" parameterType="com.ssmall.dd.dto.BoardVO">
+		insert into board value ((select max(no)+1 from member),
+		#{c_no}, #{content}, #{r_date}, #{i_no}, #{b_no}, #{m_no})
+	</insert>
+</mapper>

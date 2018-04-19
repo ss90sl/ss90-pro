@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 문서를 맵퍼타입임을 지정 -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="item_mapper">
+
+	<!-- 인덱스 new 아이템, 회전형이미지 -->
+	<select id="index_new_item" resultType="com.ssmall.dd.dto.ItemVO">
+		select img_i,no from (select rownun rn, aa.* from 
+		(select * from item where img_i is not null order by r_date desc) aa) 
+		where rn between 1 and 4;
+	</select>
+
+	<!-- 인덱스 베스트 아이템 4종, 카드형 -->
+	<select id="index_best_item" resultType="com.ssmall.dd.dto.ItemVO">
+		select * from (select rownun rn, aa.* from(select * from item 
+		order by sale desc) aa) where rn between 1 and 4;
+	</select>
+
+	<!-- 카테고리 별 4새상품 4가지 -->
+	<select id="index_c_o" resultType="com.ssmall.dd.dto.ItemVO">
+		select * from (select rownun rn, aa.* from (select * from item where c_no = #{no} 
+		order by r_date desc) aa) where rn between 1 and 8;
+	</select>
+	
+
+	<!-- 아이템페이지 -->
+	<!-- 베스트 4 -->
+	<select id="item_page_best" resultType="com.ssmall.dd.dto.ItemVO">
+		select * from (select rownun rn, aa.* from(select * from item where c_no = #{c_no} 
+		order by sale desc) aa) where rn between 1 and 4;
+	</select>
+	
+	
+	
+	
+	<!-- 리스트 -->
+	<select id="select_list" resultType="com.ssmall.dd.dto.ItemVO">
+		select * from item where c_no = #{c_no} <!-- order by sale desc 가 들어가게끔-->
+	</select>
+	
+	<select id='select_one' resultType="com.ssmall.dd.dto.ItemVO">
+		select * from item where no = #{c_no}
+	</select>
+	
+	
+	
+	<select id="select_c_one" resultType="com.ssmall.dd.dto.CartVO">
+		select * from cart where m_no = #{ no }
+	</select>
+
+	<select id="itemEA" resultType="int">
+	 	select count(*) from item
+	</select>
+
+
+	<insert id="insert_item" parameterType="com.ssmall.dd.dto.ItemVO">
+		<selectKey keyProperty="count(*)" resultType="int" order="AFTER">
+			select count(*) from item
+		</selectKey>
+		insert into item value (#{no},#{c_no},#{img_i},#{img_c},
+		#{img_m1},#{img_m2},#{name},#{s_price},#{g_price},#{ea},
+		#{return_ea}, #{sale_ea}, sysdate)	
+	</insert>
+	
+	<update id="update_item" parameterType="com.ssmall.dd.dto.ItemVO">
+		update item set img_i = #{img_i}, img_c = #{img_c}, 
+		img_m1 = #{img_m1}, img_m2 = #{img_m2}, s_price = #{s_price},
+		g_price = #{g_price}, ea = #{ea} where no = #{no}
+	</update>
+	
+	<delete id="delete_item" parameterType="int" >
+		delete from item where no = #{no}
+	</delete>
+	
+
+</mapper>
