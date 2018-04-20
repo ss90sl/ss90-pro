@@ -1,0 +1,234 @@
+@charset "utf-8";
+
+body {
+	background: rgb(255, 255, 255);
+	font: 0.75em/normal "μ¸¿o", Dotum, AppleGothic, sans-serif; 
+	color: rgb(51, 51, 51); 
+	font-size-adjust: none; 
+	font-stretch: normal;
+}
+
+#wrap {
+    margin: 0px auto;
+    width: 100%;
+    position: relative;
+}
+
+.header_wrap {
+	width: 100%;
+	background: #fff;
+}
+
+div {
+	display: block;
+}
+
+.header_wrap .header_inner {
+	width: 1200px;
+	height: 158px;
+	margin: 0 auto;
+	position: relative;
+	z-index: 60;
+}
+
+.header_wrap .header_inner .logo {
+	width: 300px;
+	text-align: center;
+	overflow: hidden;
+	margin: 0 auto;
+	position: absolute;
+	top: 47px;
+	left: 50%;
+	margin-left: -150px;
+}
+
+.header_wrap .header_inner .logo img {
+	width: 130px;
+	height: 120px;
+}
+
+.fixed_wrap, .fixed_inner {
+	width: 100%;
+	background: #fff;
+}
+
+div {
+	margin: 0px;
+	padding: 0px;
+}
+
+user agent stylesheet
+div {
+	display: block;
+}
+
+.header_wrap .log_sch {
+    width: 1200px;
+    margin: 0 auto;
+    height: 54px;
+    position: relative;
+    z-index: 20;
+}
+
+.clearWrap:before {
+	content: '';
+	float: none;
+	clear: both;
+	display: table;
+}
+
+.header_wrap .log_sch .log_menu {
+    float: left;
+    line-height: 54px;
+}
+
+.header_wrap .log_sch .log_menu a {
+    color: rgb(87, 87, 87);
+    font-size: 11px;
+    font-weight: bold;
+    float: left;
+    margin-right: 5px;    
+}
+
+a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.header_wrap .log_sch .sch_pl_wrap {
+    width: 150px;
+    float: right;
+    margin-top: 16px;
+}
+
+.header_wrap .log_sch .sch_pl_wrap .sch_wrap {
+    width: 147px;
+    height: 20px;
+    border: 1px solid #999;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    float: left;
+}
+
+form {
+    margin: 0px;
+    padding: 0px;
+}
+
+fieldset {
+    vertical-align: top;
+}
+
+fieldset {
+    margin: 0px;
+    padding: 0px;
+}
+img, fieldset, button {
+    border: 0 none;
+}
+
+fieldset {
+    display: block;
+    -webkit-margin-start: 2px;
+    -webkit-margin-end: 2px;
+    -webkit-padding-before: 0.35em;
+    -webkit-padding-start: 0.75em;
+    -webkit-padding-end: 0.75em;
+    -webkit-padding-after: 0.625em;
+    min-width: -webkit-min-content;
+    border-width: 2px;
+    border-style: groove;
+    border-color: threedface;
+    border-image: initial;
+}
+
+legend {
+    width: 0px;
+    height: 0px;
+    text-indent: -9999em;
+    display: block;
+}
+
+legend {
+    margin: 0px;
+    padding: 0px;
+}
+
+.header_wrap .log_sch .sch_pl_wrap .sch_wrap .top_sch {
+    width: 126px!important;
+    height: 20px!important;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    border: 0px;
+    text-indent: 5px;
+}
+
+.clearWrap:after {
+	content: '';
+	float: none;
+	clear: both;
+	display: table;
+}
+
+.catez_wrap {
+    width: 103%;
+    border-top: 1px solid #000;
+    position: relative;
+    z-index: 15;
+}
+
+.catez_wrap .catez_inn {
+    width: 1200px;
+    margin: 0 auto;
+    font-size: 0px;
+    letter-spacing: 0px;
+    word-spacing: 0px;
+}
+
+.catez_wrap .catez_inn .t_cate {
+    display: inline-block;
+    _display: inline;
+    font-size: 40px;
+    position: relative;
+    z-index: 20;
+    padding: 23px 85px;
+}
+
+.catez_wrap .catez_inn .t_cate >a {
+    line-height: 53px;
+    font-family: 'Nanum Gothic R';
+    color: #000;
+    padding: 0px;
+    display: block;
+    text-decoration: none;
+    position: relative;
+    z-index: 20;
+    font-weight: bold;
+}
+
+.catez_wrap .catez_inn .t_cate >a .r_bar {
+    position: absolute;
+    top: 50%;
+    margin-top: -6px;
+    right: 0px;
+    width: 1px;
+    height: 12px;
+    background: #000;
+    display: none;
+}
+
+.carousel-inner img {       
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+}
+  .carousel-caption h3 {
+      color: #fff !important;
+}
+@media (max-width: 600px) {
+    .carousel-caption {
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+}  
